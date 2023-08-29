@@ -8,6 +8,10 @@ $grey-light: #eaeaea;
 $grey-dark: #808080;
 $white: #fff;
 
+$header-height: 60px;
+$sidebar-width: 300px;
+
+
 
 
 *,
@@ -28,5 +32,5 @@ body {
         'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: $primary;
+    // color: $primary;
 }

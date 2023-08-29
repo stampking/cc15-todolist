@@ -81,3 +81,114 @@ $grey-light: #eaeaea;
 $grey-dark: #808080
 $white: #fff;
  
+
+    <div className='todo'>
+        <div className="todo__header">Header</div>
+        <div className="todo__sidebar">SideBar</div>
+        <div classNAme="todo_content">TodoContent</div>
+    </div>
+
+
+
+    $header-height: 44px;
+$sidebar-width: 300px;
+
+.todo {
+    display: grid;
+    grid-template-rows: $header-height calc(100vh - $header-height);
+    grid-template-columns: $sidebar-width calc(100vw - $sidebar-width);
+
+    &__header {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    &__sidebar {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        // position: sticky;
+    }
+
+    &__content {
+        grid-row: 2/3;
+        grid-column: 2/3;
+
+        // other css
+        overflow-y: scroll;
+        padding: 20px 30px;
+        padding-top: 0;
+    }
+}
+
+import styles from 'App.module.scss';
+
+<div className={styles.todo}>
+    <div className={styles.todo__header}>Header</div>
+    <div className={styles.todo__sidebar}>SideBar</div>
+    <div classNAme={styles.todo__content}>TodoContent</div>
+</div>;
+
+######################################################################################
+<header className='header'>
+    {/* Logo */}
+    <div className='header__logo'></div>
+
+    {/* Text */}
+    <div className='header__text'>
+        <h3>Todoist</h3>
+    </div>
+
+    {/* Search */}
+    <div className='header__search'></div>
+</header>
+
+import { FaHome } from 'react-icons/fa';
+
+// add this code in return statement
+<div className='header__logo'>
+    <FaHome />
+</div>
+
+##################################################################
+
+import { FaSearch } from 'react-icons/fa';
+<div className='search'>
+    <span className='search__icon'>
+        <FaSearch />
+    </span>
+    <input type='text' className='search__input' placeholder='search' />
+</div>;
+
+// import global.scss
+.search {
+    position: relative;
+    border-radius: 4px;
+
+    // magnify-icon
+    &__icon {
+        // position
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        // decorate
+        font-size: 1.6rem;
+        font-weight: 200;
+        color: grey;
+
+        // control-child
+        display: flex;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 5px;
+        padding-left: 30px;
+        border-radius: 5px;
+        border: 1px solid $grey-light;
+        font-size: 1.6rem;
+        outline: none;
+        color: $grey-dark;
+    }
+}
